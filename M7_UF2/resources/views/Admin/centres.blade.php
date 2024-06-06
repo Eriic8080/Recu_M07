@@ -17,6 +17,17 @@
         </tr>
     </thead>
     <tbody>
+    
+    @csrf
+    foreach($centres as $centre)
+        <tr>
+            <td>{{ $centre->id_centre }}</td>
+            <td>{{ $centre->name }}</td>
+            <td>{{ $centre->address }}</td>
+            <td>{{ $centre->cp }}</td>
+            <td>{{ $centre->city }}</td>
+        </tr>
+    endforeach
 
         /*
         Recórrer l'objecte que ve del controlador mostrant les següents 
@@ -26,6 +37,6 @@
     </tbody>
 </table> 
 // Referenciar a la ruta de nom v_admin
-<a href="">ADMIN VISTA</a>
+<a href="{{route('admin_view')}}">ADMIN VISTA</a>
 </body>
 </html>
