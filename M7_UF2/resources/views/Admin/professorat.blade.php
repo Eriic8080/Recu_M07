@@ -22,9 +22,19 @@
         Recórrer l'objecte que ve del controlador mostrant les següents 
         dades de professorat: id, name, surname, rol i email. En format taula (tr,td)
         */
+        @csrf
+        @foreach($teach as $professor)
+        <tr>
+            <td>{{ $professor->id }}</td>
+            <td>{{ $professor->name }}</td>
+            <td>{{ $professor->surname }}</td>
+            <td>{{ $professor->rol }}</td>
+            <td>{{ $professor->email }}</td>
+        </tr>
+        @endforeach
     </tbody>
 </table> 
 // Referenciar a la ruta de nom v_admin
-<a href="">ADMIN VISTA</a>
+<a href="{{route('admin_view')">ADMIN VISTA</a>
 </body>
 </html>
